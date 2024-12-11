@@ -2,7 +2,7 @@
 
 namespace Zf2Resque\Service;
 
-use Zend\ServiceManager\ServiceManager;
+use Laminas\ServiceManager\ServiceManager;
 
 class ResqueJob extends \Resque_Job
 {

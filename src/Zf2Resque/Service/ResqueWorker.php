@@ -3,10 +3,10 @@
 namespace Zf2Resque\Service;
 
 use Resque_Job;
-use Zend\ServiceManager\ServiceManager;
+use Laminas\ServiceManager\ServiceManager;
 use Zf2Resque\Service\ResqueJob;
-use Zend\EventManager\EventManagerAwareInterface;
-use Zend\EventManager\EventManagerInterface;
+use Laminas\EventManager\EventManagerAwareInterface;
+use Laminas\EventManager\EventManagerInterface;
 
 class ResqueWorker extends \Resque_Worker implements EventManagerAwareInterface
 {
