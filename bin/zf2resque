@@ -6,9 +6,7 @@ if(empty($QUEUE)) {
     die("Set QUEUE env var containing the list of queues to work.\n");
 }
 
-use Zend\ServiceManager\ServiceManager;
-use Zend\Mvc\Application;
-
+use Laminas\Mvc\Application;
 
 ini_set('display_errors', true);
 chdir(dirname(dirname(dirname(dirname(__DIR__)))));
@@ -24,10 +22,10 @@ if (!(@include_once __DIR__ . '/../vendor/autoload.php') && !(@include_once __DI
     throw new RuntimeException('Error: vendor/autoload.php could not be found. Did you run php composer.phar install?');
 }
 
-$config = new \Zend\Config\Config(include 'config/application.config.php');
+$config = new \Laminas\Config\Config(include 'config/application.config.php');
 
 if (file_exists('config/application.config.local.php')) {
-    $config->merge(new \Zend\Config\Config(include 'config/application.config.local.php'));
+    $config->merge(new \Laminas\Config\Config(include 'config/application.config.local.php'));
 }
 
 $application = Application::init($config->toArray());
